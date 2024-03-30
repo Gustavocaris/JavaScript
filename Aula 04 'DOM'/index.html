@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #09ff00;
+            font: normal 16pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos DOM</h1>
+    <P>Aqui vai o resultado</P>
+    <p>aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="msg">click here</div>
+
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1]
+
+        var d = window.document.getElementById('msg')
+        d.style.background = 'red' 
+
+        /*
+        EXISTEM DIVERSAS FORMAS PARA BUSCAR ALGO ATRAVES DO DOM
+        Por ID:
+        const elementoPorId = document.getElementById('idDoElemento')
+        Por class:
+        const elementosPorClasse = document.getElementsByClassName('nomeDaClasse')
+        Por Seletor
+        const elementosPorSeletor = document.querySelectorAll('seletorCSS');
+
+        MANIPULAR CONTEUDO:
+        elemento.innerHTML; // Obtém o conteúdo HTML
+        elemento.innerHTML = 'Novo conteúdo'; // Define novo conteúdo HTM
+        elemento.textContent; // Obtém o texto
+        elemento.textContent = 'Novo texto'; // Define novo texto
+        */
+
+        // TEM MUITOS OUTROSSSSSSSSSSSSSSSSSSSSS
+    </script>
+</body>
+</html>
