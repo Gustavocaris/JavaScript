@@ -7,27 +7,28 @@
     <title>Tabuada</title>
 </head>
 <body>
-    <!--onload é pra carregar a hora Lá na function-->
     <header>
         <h1>Tabuada</h1>
     </header>
     <section>
-            <div>
-              <p>
+        <div>
+            <p>
                 Número: <input type="number" name="num" id="txtn">
-                <input type="button" value="Gerar-Tabuada" onclick="Tabuada()"> 
-              </p>
-            </div>
-                <select name="Tabuada" id="seltab"></select>
-            <div>
-            
-            </div>
+                <input type="button" value="Gerar-Tabuada" onclick="calcularTabuada()"> 
+            </p>
+        </div>
+                
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite um numero acima</option>
+            </select>
+        </div>
             
     </section>
     <footer>
         <p>&copy;Cursoemvideo</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="funcao.js"></script>
 </body>
 </html>
