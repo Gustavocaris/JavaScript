@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-image: linear-gradient(to right, #EC02CB, #3802CB);
+}
+
+/*          PARA FAZER O DEGRADE
+
+to right → transição de cores na horizontal da esquerda para a direita;
+to left → transição de cores na horizontal da direita para a esquerda;
+to top → transição de cores na vertical de baixo para cima;
+to bottom → transição de cores na vertical de cima para baixo;
+to top left → transição de cores a partir do canto superior esquerdo em direção ao centro;
+to top right → transição de cores a partir do canto superior direito em direção ao centro;
+to bottom left → transição de cores a partir do canto inferior esquerdo em direção ao centro;
+to bottom right → transição de cores a partir do canto inferior direito em direção ao centro.
+
+*/
+
+main {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #000000;
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+}
+
+h1 {
+    color: #000000;
+    text-align: center;
+    text-shadow: 1px 2px 1px red;
+}
+
+h2 {
+    color: #261CDB;
+}
+p {
+    text-align: justify;
+}
