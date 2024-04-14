@@ -4,15 +4,14 @@ function tocaSom (idElementoAudio) {
     document.querySelector(idElementoAudio).play()
 }
 
-document.querySelector('.tecla_pom').onclick = tocaSomPom // não preciso colocar o parenteses, pois ele tem que guardar essa informação
+document.querySelector('.tecla_pom').onclick = tocaSom // não preciso colocar o parenteses, pois ele tem que guardar essa informação
 
 
 /*referencias devem ser criadas com base nos valores que serão guardadas*/
 const listaDeTeclas = document.querySelectorAll('.tecla')
 
-let contador = 0
 
-while (contador < listaDeTeclas.length) {
+for (let contador = 0; contador < listaDeTeclas.length; contador ++) {
 
     const tecla = listaDeTeclas[contador]
     const instrumento = tecla.classList[1]
@@ -26,8 +25,21 @@ while (contador < listaDeTeclas.length) {
     tecla.onclick = function () {
         tocaSom(idAudio)
     }
+    
 
-    contador = contador +1
+    // quando a tecla é apertada
+    tecla.onkeydown = function (evento) {
 
-    console.log(contador)
+        if (evento.code === 'Space' || evento.code === 'Enter') {
+            tecla.classList.add('ativa');
+        }
+
+    }
+
+
+    // quando a tecla é 'SOLTADA' rs
+    tecla.onkeyup = function () {
+        tecla.classList.remove('ativa');
+    }
+
 }
