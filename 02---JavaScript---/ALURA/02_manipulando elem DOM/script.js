@@ -6,6 +6,8 @@ const curtoBt = document.querySelector('.app__card-button--curto')
 const longoBt = document.querySelector('.app__card-button--longo')
 const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
+// queryselectorALL -> para buscar mais de um elemento em HTML
+const botoes = document.querySelectorAll('.app__card-button')
 
 
 // Criando nossos eventos
@@ -13,19 +15,26 @@ const titulo = document.querySelector('.app__title')
 // tiver um click nesse botão
 focoBt.addEventListener('click', () => {
     alterarContexto('foco')
+    focoBt.classList.add('active') // pra alterar a "BORDA" do botão
 })
 
 curtoBt.addEventListener('click', () => {
     alterarContexto('descanso-curto')
+    curtoBt.classList.add('active')
 })
 
 longoBt.addEventListener('click', () => {
     alterarContexto('descanso-longo')
+    longoBt.classList.add('active')
 })
 
 
 // pegar meu html e alterar o contexto, o addeventlistener estava muito repetitivo
 function alterarContexto(contexto) {
+    // usando o classlist para remover o active
+    botoes.forEach(function (contexto) {
+        contexto.classList.remove('active')
+    })
     html.setAttribute('data-contexto', contexto)
     banner.setAttribute('src', `imagens/${contexto}.png`)
     switch (contexto) {
