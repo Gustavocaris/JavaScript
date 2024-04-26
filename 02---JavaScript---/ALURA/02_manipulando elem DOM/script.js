@@ -9,6 +9,20 @@ const titulo = document.querySelector('.app__title')
 // queryselectorALL -> para buscar mais de um elemento em HTML
 const botoes = document.querySelectorAll('.app__card-button')
 
+const musicaFocoInput = document.querySelector('#alternar-musica')
+const musica = new Audio('sons/luna-rise-part-one.mp3')
+musica.loop = true // pra musica não parar de tocar após o tempo dela
+
+// criar um evento pra gente escutar. 'change' para o input
+// change é com True ou false caso seja acionado
+musicaFocoInput.addEventListener('change', () => {
+    if(musica.paused) {
+        musica.play()
+    } else {
+        musica.pause()
+    }
+})
+
 
 // Criando nossos eventos
 // EVENTO DE CLICK -> vou chamar o addeventlistener e passar uma função para quando 
