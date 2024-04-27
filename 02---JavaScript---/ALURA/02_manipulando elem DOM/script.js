@@ -6,21 +6,23 @@ const curtoBt = document.querySelector('.app__card-button--curto')
 const longoBt = document.querySelector('.app__card-button--longo')
 const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
+const tempoNaTela = document.querySelector('#timer')
+
 // queryselectorALL -> para buscar mais de um elemento em HTML
 const botoes = document.querySelectorAll('.app__card-button')
 const startPauseBt = document.querySelector('#start-pause')
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
+const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-icon") 
 
-
-const audioPlay = new Audio('/sons/play.wav');
-const audioPausa = new Audio('/sons/pause.mp3');
-const audioTempoFinalizado = new Audio('./sons/beep.mp3')
+const audioPlay = new Audio('sons/play.wav');
+const audioPausa = new Audio('sons/pause.mp3');
+const audioTempoFinalizado = new Audio('sons/beep.mp3')
 
 
 const musicaFocoInput = document.querySelector('#alternar-musica')
 const musica = new Audio('sons/luna-rise-part-one.mp3')
 
-let tempoDecorridoEmSegundos = 5
+let tempoDecorridoEmSegundos = 1500
 let intervaloId = null
 
 
@@ -41,16 +43,19 @@ musicaFocoInput.addEventListener('change', () => {
 // EVENTO DE CLICK -> vou chamar o addeventlistener e passar uma função para quando 
 // tiver um click nesse botão
 focoBt.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 1500
     alterarContexto('foco')
     focoBt.classList.add('active') // pra alterar a "BORDA" do botão
 })
 
 curtoBt.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 600 // (10min * 60s)
     alterarContexto('descanso-curto')
     curtoBt.classList.add('active')
 })
 
 longoBt.addEventListener('click', () => {
+    tempoDecorridoEmSegundos = 900 // (15min * 60s)
     alterarContexto('descanso-longo')
     longoBt.classList.add('active')
 })
@@ -58,6 +63,7 @@ longoBt.addEventListener('click', () => {
 
 // pegar meu html e alterar o contexto, o addeventlistener estava muito repetitivo
 function alterarContexto(contexto) {
+    mostrarTempo()// para alterar os tempos do cronometro eu só chamo a funcao aqui dentro
     // usando o classlist para remover o active
     botoes.forEach(function (contexto) {
         contexto.classList.remove('active')
@@ -95,7 +101,8 @@ const contagemRegressiva = () => {
         return
     }
     tempoDecorridoEmSegundos -= 1 //  -= é p/ decrementar um valor
-    console.log('Temporizador: ' + tempoDecorridoEmSegundos)
+    mostrarTempo()
+
 }
 
 // evento de click
@@ -112,14 +119,22 @@ function iniciarOuPausar() {
     // metodo 'setintercal' para executar uma contagem regressiva em determinado tempo
 
     iniciarOuPausarBt.textContent = "Pausar"
-
+    iniciarOuPausarBtIcone.setAttribute('src', `imagens/pause.png`)
 
 }
 
 function zerar() {
     clearInterval(intervaloId) // para interromper a execuçãodo intervald após zerar
     iniciarOuPausarBt.textContent = "Começar"
+    iniciarOuPausarBtIcone.setAttribute('src', `imagens/play_arrow.png`)
     intervaloId = null
 
 }
 
+function mostrarTempo() {
+    const tempo = new Date(tempoDecorridoEmSegundos * 1000) // formatar o tempo na tela p/minutos
+    const tempoFormatado = tempo.toLocaleTimeString('pt-Br', {minute: '2-digit', second: '2-digit'})
+    tempoNaTela.innerHTML = `${tempoFormatado}`
+}
+
+mostrarTempo()
