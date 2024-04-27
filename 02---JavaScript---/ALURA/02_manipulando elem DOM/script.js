@@ -8,9 +8,15 @@ const banner = document.querySelector('.app__image')
 const titulo = document.querySelector('.app__title')
 // queryselectorALL -> para buscar mais de um elemento em HTML
 const botoes = document.querySelectorAll('.app__card-button')
+const startPauseBt = document.querySelector('#start-pause')
 
 const musicaFocoInput = document.querySelector('#alternar-musica')
 const musica = new Audio('sons/luna-rise-part-one.mp3')
+
+let tempoDecorridoEmSegundos = 5
+let intervaloId = null
+
+
 musica.loop = true // pra musica não parar de tocar após o tempo dela
 
 // criar um evento pra gente escutar. 'change' para o input
@@ -73,3 +79,17 @@ function alterarContexto(contexto) {
     }
 }
 
+// Cronometro que funcionara após o clikc
+const contagemRegressiva = () => {
+    iniciar()
+    tempoDecorridoEmSegundos -= 1 //  -= é p/ decrementar um valor
+    console.log('Temporizador: ' + tempoDecorridoEmSegundos)
+}
+
+// evento de click
+startPauseBt.addEventListener('click', contagemRegressiva)
+
+function iniciar () {
+    intervaloId = setInterval(contagemRegressiva, 1000) // 1000 é porque ele funciona em milisegundos
+    // metodo 'setintercal' para executar uma contagem regressiva em determinado tempo
+}
