@@ -5,6 +5,7 @@ e fácil de entender.*/
 
 const elementoParaInserirLivros = document.getElementById('livros')
 
+
 function exibirOsLivrosNaTela(listaDeLivros) {
     elementoParaInserirLivros.innerHTML = ''
     listaDeLivros.forEach(livro => {
@@ -24,3 +25,12 @@ function exibirOsLivrosNaTela(listaDeLivros) {
         `
     })
 }
+
+
+//  function verificarDisponibilidadeDoLivro(livro) {
+//    if (livro.quantidade > 0 ){
+//      return 'livro__imagens'
+//    } else {
+//      return 'livros__imagens indisponivel'
+//    }
+//  }
