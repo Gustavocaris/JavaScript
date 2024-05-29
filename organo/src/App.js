@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Banner from '/componentes/Banner/Banner';
+import Banner from './componentes/Banner/Banner';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Bem vindo ao react
+          Bem vindo ao Reactee
         </p>
         <a
           className="App-link"
