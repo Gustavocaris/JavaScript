@@ -4,7 +4,10 @@ import './Banner.css'
 function Banner() {
     // JSX 'como o react trabalha e vai entender lá no DOM'
     return (
-        <img src="/organo/public/imagens/banner.png" alt="logo" />
+        <header className="banner">
+            <img src="/imagens/banner.png" alt="logo" />
+        </header>
+
     )
 }
 
