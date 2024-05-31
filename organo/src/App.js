@@ -1,6 +1,6 @@
 
 import Banner from './componentes/Banner/Banner/Banner';
-import CampoTexto from './componentes/Banner/campoTexto/CampoTexto';
+import CampoTexto from './componentes/Banner/campoTexto';
 
 function App() {
   return (
