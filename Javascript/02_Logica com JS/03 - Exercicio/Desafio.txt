@@ -1,0 +1,6 @@
+Crie um programa em JavaScript que simule uma calculadora básica. O programa deve:
+
+-   Solicitar ao usuário dois números.
+-   Perguntar ao usuário qual operação ele deseja realizar (+, -, *, /).
+-   Realizar a operação escolhida e exibir o resultado na tela.
+-   Implementar um sistema para tratar possíveis erros, como divisão por zero ou entrada de dados inválidos.
