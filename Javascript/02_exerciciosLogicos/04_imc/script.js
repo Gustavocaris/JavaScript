@@ -11,7 +11,7 @@ function imc () {
     if(nome !== '' && altura !== '' && peso !== '' ) {
         alert('Preenchido')
     }else{
-        alert('Preencha todos os valores!')
+        resultado.textContent = 'Preencha todos os valores!';
     }
 }
 
