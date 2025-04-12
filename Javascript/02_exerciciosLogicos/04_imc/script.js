@@ -10,6 +10,8 @@ function imc () {
 
     if(nome !== '' && altura !== '' && peso !== '' ) {
         alert('Preenchido')
+        (altura+peso)/2 != resultado;
+
     }else{
         resultado.textContent = 'Preencha todos os valores!';
     }
