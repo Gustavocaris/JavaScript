@@ -22,3 +22,24 @@ function adicionarTarefa() {
   input.value = "";          // Limpa o input
   renderizarLista();         // Atualiza a lista na tela
 }
+
+
+// Renderiza a lista no DOM
+function renderizarLista() {
+    const ul = document.getElementById("lista");
+    ul.innerHTML = "";  // Limpa a lista anterior
+  
+    tarefas.forEach((tarefa) => {
+      const li = document.createElement("li");
+      li.textContent = tarefa.descricao;
+  
+      // Marca como concluída ao clicar
+      li.onclick = () => {
+        tarefa.concluida = !tarefa.concluida;
+        li.style.textDecoration = tarefa.concluida ? "line-through" : "none";
+      };
+  
+      ul.appendChild(li);
+    });
+  }
+  
