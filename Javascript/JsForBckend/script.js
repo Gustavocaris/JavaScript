@@ -1,16 +1,24 @@
-let estudante = 'Gustavo';
-let Professora = 'Luciela';
+// Lista de tarefas (array)
+const tarefas = [];
 
-let materia = 'Mat';
+// Adiciona uma nova tarefa à lista
+function adicionarTarefa() {
+  const input = document.getElementById("novaTarefa");
+  const texto = input.value.trim();
 
-let horario = 'teste';
+  if (texto === "") {
+    alert("Digite uma tarefa válida!");
+    return;
+  }
 
-console.log(estudante, Professora);
+  // Cria um objeto tarefa
+  const tarefa = {
+    id: Date.now(),       // ID único com base no timestamp
+    descricao: texto,
+    concluida: false
+  };
 
-if (1 > 0) {
-    let estudante = 'Gustavo';
-    console.log(estudante);
+  tarefas.push(tarefa);      // Adiciona no array
+  input.value = "";          // Limpa o input
+  renderizarLista();         // Atualiza a lista na tela
 }
-
-estudante = 'Ana';
-console.log(estudante);
