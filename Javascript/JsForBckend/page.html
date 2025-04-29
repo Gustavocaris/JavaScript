@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    ul { padding-left: 0; }
+    li { list-style: none; margin-bottom: 5px; }
+  </style>
 </head>
 <body>
-    
-    
-    <script src="./script.js"></script>
+  <h1>Minha Lista de Tarefas</h1>
+  <input id="novaTarefa" type="text" placeholder="Digite uma tarefa" />
+  <button onclick="adicionarTarefa()">Adicionar</button>
+  <ul id="lista"></ul>
+
+  <script src="script.js"></script>
 </body>
 </html>
