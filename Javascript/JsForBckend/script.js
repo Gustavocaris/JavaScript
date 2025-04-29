@@ -7,7 +7,10 @@ let horario = 'teste';
 
 console.log(estudante, Professora);
 
-if (1>0) {
+if (1 > 0) {
     let estudante = 'Gustavo';
-    console.log()
+    console.log(estudante);
 }
+
+estudante = 'Ana';
+console.log(estudante);
