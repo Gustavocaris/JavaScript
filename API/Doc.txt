@@ -2,3 +2,10 @@
 2 Criando um arquivo server.js
 
 3 executando o 'npm i express
+
+4 Criar nossa API de usuarios
+
+- criar um usuarios
+-listrar todos os users
+- editar os usuarios
+- deletar os usuarios
