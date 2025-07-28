@@ -1,18 +1,17 @@
-import express, { response } from 'express';
+import express from 'express';
 
 const app = express();
 
-const user = []
+const users = [];
 
-app.post('/usuarios',(request,response) => {
-    console.log(request)
-})
+app.post('/usuarios', (req, res) => {
+    res.send('Usuário cadastrado!');
+});
 
-// na nossa rota: Tipo e o endereço
-app.get('/usuarios',(request,response) => {
-    app.send('Teste de comunicacao');
-})
+app.get('/usuarios', (req, res) => {
+    res.send('teste comunicação');
+});
 
-app.listen(3000);
-
-// Criando nossa API de usuarios - Mais info no Doc.txt
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
